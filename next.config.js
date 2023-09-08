@@ -16,6 +16,8 @@ const nextConfig = {
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./RemoteOneTitle": "./src/components/RemoteOneTitle.tsx",
+          // later better to define way for modules / components / etc that are shared for all remotes
+          // like these files below
           "./ComponentWithRenderError":
             "./src/components/ComponentWithRenderError.tsx",
           "./ComponentWithHandlerError":
@@ -25,7 +27,7 @@ const nextConfig = {
           antd: {
             singleton: true,
             requiredVersion: packageJson.dependencies.antd,
-            eager: true
+            eager: true,
           },
         },
       })
