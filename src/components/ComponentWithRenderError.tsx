@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RemoteExporter from "./RemoteExporter";
 
-const _ComponentThatErrored = () => {
+const _ComponentWithRenderErrored = () => {
   const [shouldError, setShouldError] = useState(false);
 
   useEffect(() => {
@@ -19,10 +19,10 @@ const _ComponentThatErrored = () => {
   );
 };
 
-const ComponentThatErrored = () => (
+const ComponentWithRenderErrored = () => (
   <RemoteExporter>
-    <_ComponentThatErrored />
+    <_ComponentWithRenderErrored />
   </RemoteExporter>
 );
 
-export default ComponentThatErrored;
+export default ComponentWithRenderErrored;

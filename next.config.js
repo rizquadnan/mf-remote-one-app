@@ -15,7 +15,10 @@ const nextConfig = {
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./RemoteOneTitle": "./src/components/RemoteOneTitle.tsx",
-          "./ComponentThatError": "./src/components/ComponentThatError.tsx",
+          "./ComponentWithRenderError":
+            "./src/components/ComponentWithRenderError.tsx",
+          "./ComponentWithHandlerError":
+            "./src/components/ComponentWithHandlerError.tsx",
         },
         shared: {},
       })

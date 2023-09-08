@@ -18,13 +18,21 @@ const RemoteExporter = (props: TRemoteExporter) => {
     <ErrorBoundary
       FallbackComponent={({ error, resetErrorBoundary }) =>
         {
+          
           if (props.fallbackComponent) {
             return props.fallbackComponent({ error, resetErrorBoundary });
           } else {
-            return <div>
-              <p>Error from remote-one: {JSON.stringify(error)}</p>
-              <button onClick={resetErrorBoundary}>Reset Component</button>
-            </div>
+            return (
+              <div>
+                {error instanceof Error ? (
+                  <div>
+                    <p>Error name: {error.name}</p>
+                    <p>Error message: {error.message}</p>
+                  </div>
+                ) : null}
+                <button onClick={resetErrorBoundary}>Reset Component</button>
+              </div>
+            );
           }
         }
       }
