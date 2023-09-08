@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import RemoteExporter from "./RemoteExporter";
 
 const _ComponentThatErrored = () => {
+  const [shouldError, setShouldError] = useState(false);
+
   useEffect(() => {
-    throw new Error("BOOOOM!");
-  }, []);
+    if (shouldError) {
+      throw new Error("BOOOOM!");
+    }
+  }, [shouldError]);
 
   return (
     <div>
-      <p>You Won't see this. First render has error</p>
+      <button onClick={() => setShouldError(true)}>
+        Click this to trigger render error
+      </button>
     </div>
   );
 };
