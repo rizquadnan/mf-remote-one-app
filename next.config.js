@@ -24,7 +24,8 @@ const nextConfig = {
         shared: {
           antd: {
             singleton: true,
-            requiredVersion: packageJson.dependencies.antd
+            requiredVersion: packageJson.dependencies.antd,
+            eager: true
           },
         },
       })
