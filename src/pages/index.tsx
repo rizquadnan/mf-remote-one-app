@@ -1,9 +1,9 @@
 import React from 'react'
 
-const index = () => {
+const Index = () => {
   return (
-    <div>index</div>
+    <div>Remote One</div>
   )
 }
 
-export default index
+export default Index;
