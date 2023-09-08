@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RemoteExporter from "./RemoteExporter";
 import { useErrorBoundary } from "react-error-boundary";
+import { Button } from "antd";
 
 const _ComponentWithRenderErrored = () => {
   const { showBoundary } = useErrorBoundary();
@@ -17,9 +18,9 @@ const _ComponentWithRenderErrored = () => {
 
   return (
     <div>
-      <button onClick={handleClick}>
+      <Button onClick={handleClick}>
         Click this to trigger handler error
-      </button>
+      </Button>
     </div>
   );
 };

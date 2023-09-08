@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RemoteExporter from "./RemoteExporter";
+import { Button } from "antd";
 
 const _ComponentWithRenderErrored = () => {
   const [shouldError, setShouldError] = useState(false);
@@ -12,9 +13,9 @@ const _ComponentWithRenderErrored = () => {
 
   return (
     <div>
-      <button onClick={() => setShouldError(true)}>
+      <Button onClick={() => setShouldError(true)}>
         Click this to trigger render error
-      </button>
+      </Button>
     </div>
   );
 };

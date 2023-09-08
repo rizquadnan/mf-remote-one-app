@@ -1,15 +1,14 @@
 import React from "react";
 import RemoteExporter from "./RemoteExporter";
+
 const _RemoteOneTitle = () => {
-  return (
-    <div>
-      <p>Hello from remote one! Test Change</p>
-    </div>
-  );
+  return <p>Hello from remote one!</p>;
 };
 
-const RemoteOneTitle = () => <RemoteExporter>
-  <_RemoteOneTitle />
-</RemoteExporter>
+const RemoteOneTitle = () => (
+  <RemoteExporter>
+    <_RemoteOneTitle />
+  </RemoteExporter>
+);
 
 export default RemoteOneTitle;
