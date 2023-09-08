@@ -1,4 +1,5 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
+const packageJson = require("./package.json")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,7 +21,12 @@ const nextConfig = {
           "./ComponentWithHandlerError":
             "./src/components/ComponentWithHandlerError.tsx",
         },
-        shared: {},
+        shared: {
+          antd: {
+            singleton: true,
+            requiredVersion: packageJson.dependencies.antd
+          },
+        },
       })
     );
 

@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 
@@ -30,7 +31,7 @@ const RemoteExporter = (props: TRemoteExporter) => {
                     <p>Error message: {error.message}</p>
                   </div>
                 ) : null}
-                <button onClick={resetErrorBoundary}>Reset Component</button>
+                <Button onClick={resetErrorBoundary}>Reset Component</Button>
               </div>
             );
           }
